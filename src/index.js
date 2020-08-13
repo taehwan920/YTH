@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+import { Provider } from 'mobx-react';
+import YangStore from './stores/YangStore';
+
+const yangStore = new YangStore();
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider yangStore={yangStore}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
