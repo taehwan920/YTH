@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 
-export default class YourStore {
+export default class {
     @observable yangStore = 'hello';
     // observable은 변수, 즉 멤버를 설정할때 사용하는 const, let같은 개념
 
