@@ -23,12 +23,19 @@ const HomeFooter = styled.footer`
 `;
 
 const FooterGithub = styled.a`
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+    &:hover {
+        color: #3f48cc;
+        letter-spacing: 5px;
+    }
 `;
 
 export default () => {
     return (
         <HomeFooter>
             <FooterGithub
+                draggable="true"
                 href="https://github.com/taehwan920/YTH"
                 rel="noopener noreferrer"
                 target="_blank"

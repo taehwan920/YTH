@@ -16,4 +16,7 @@ export default class {
     // 홈 커버 애니메이션 관련 state
     @observable coverUnwrapped = false;
     @action ifUnwrapped = () => this.coverUnwrapped = true;
+
+    @observable MenuFontSize = 80;
+    @observable ArrowFontSize = 100;
 };

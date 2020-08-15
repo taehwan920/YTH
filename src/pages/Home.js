@@ -4,6 +4,8 @@ import { observer, inject } from 'mobx-react';
 import Logo from '../components/Logo';
 import Footer from '../components/home/Footer';
 import HomeCover from '../components/home/HomeCover';
+import HomeAbout from '../components/home/HomeAbout';
+import HomeCraft from '../components/home/HomeCraft';
 
 const HomeWrapper = styled.main`
     background-color: #c3d3c2;
@@ -13,6 +15,7 @@ const HomeWrapper = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 `;
 
 const HomeContentsBox = styled.section`
@@ -28,16 +31,13 @@ const HomeContentsBox = styled.section`
 
 class Home extends React.Component {
     render() {
-        const {
-            yangStore
-        } = this.props;
         return (
             <HomeWrapper>
                 <HomeCover />
                 <HomeContentsBox>
-                    <article cursor="pointer">ABOUT</article>
+                    <HomeAbout />
                     <Logo />
-                    <article>CRAFT</article>
+                    <HomeCraft />
                 </HomeContentsBox>
                 <Footer />
             </HomeWrapper>

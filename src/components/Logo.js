@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import BigTxt from './BigTxt';
 
 const LogoWrapper = styled.div`
     background-color: #6aaf66;
@@ -13,34 +14,23 @@ const LogoWrapper = styled.div`
     align-items: center;
 `;
 
-const LogoTxt = styled.span`
-    ${props => props.fontSize && css`
-        height: ${props.fontSize}px;
-        line-height: ${props.fontSize}px;
-        font-size: ${props.fontSize}px;
-    `}
-`;
-
 export default () => {
     return (
         <LogoWrapper
             draggable="true"
         >
-            <LogoTxt
+            <BigTxt
                 fontSize={140}
-            >
-                YTH
-            </LogoTxt>
-            <LogoTxt
+                txtItem="YTH"
+            />
+            <BigTxt
                 fontSize={101}
-            >
-                PORT
-                </LogoTxt>
-            <LogoTxt
+                txtItem="PORT"
+            />
+            <BigTxt
                 fontSize={92.5}
-            >
-                FOLIO
-                </LogoTxt>
+                txtItem="FOLIO"
+            />
         </LogoWrapper>
     )
 };

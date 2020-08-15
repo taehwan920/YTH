@@ -25,7 +25,7 @@ const CoverWrapper = styled.div`
 `;
 
 const UnwrapKF = keyframes`
-    0% { width: 100px; }
+    0%, 30% { width: 100px; }
     100% {width: 0px; }
 `;
 
