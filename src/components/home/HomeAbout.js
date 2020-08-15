@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { inject, observer } from 'mobx-react';
 import BigTxt from '../BigTxt';
+import { isMobile } from 'react-device-detect';
 
 const HomeAboutBox = styled.article`
     width: max-content;
@@ -14,18 +15,41 @@ const HomeAboutBox = styled.article`
 const AboutTxt = styled.div`
     width: max-content;
     height: max-content;
-    display: flex;
+    display: ${props => props.aniEnd ? 'none' : 'flex'};
     justify-content: center;
     align-items: center;
-    z-index: 5;
     letter-spacing: 5px;
     opacity: ${props => props.menuClicked ? '0' : '1'};
     transition: all 0.3s ease;
+    z-index: 5;
 
     &:hover {
         color: #3f48cc;
     }
 `;
+
+// const AboutHidden = styled.div`
+//     width: max-content;
+//     height: max-content;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 5;
+//     letter-spacing: 5px;
+//     opacity: ${props => props.about && !props.craft ? '1' : '0'};
+//     position: absolute;
+//     transition: all 0.3s ease;
+//     z-index: 4;
+
+//     ${props => props.aniEnd && css`
+//         top: calc(50% - ${props.aboutHei / 2}px);
+//         left: calc(50% - ${props.aboutWid / 2}px);
+//     `}
+//     ${props => !props.aniEnd && css`
+//         top: ${props => props.aboutY}px;
+//         left: ${props => props.aboutX}px;
+//     `}
+// `;
 
 const AboutHidden = styled.div`
     width: max-content;
@@ -41,8 +65,7 @@ const AboutHidden = styled.div`
     z-index: 4;
 
     ${props => props.aniEnd && css`
-        top: calc(50% - ${props.aboutHei / 2}px);
-        left: calc(50% - ${props.aboutWid / 2}px);
+        transform: translate(${props.aboutMoveX}px, ${props.aboutMoveY}px);
     `}
     ${props => !props.aniEnd && css`
         top: ${props => props.aboutY}px;
@@ -56,25 +79,39 @@ const AboutHidden = styled.div`
 class HomeAbout extends React.Component {
     getPos = () => {
         const posX = this.aboutTxtRef.offsetLeft;
-        const posY = this.aboutTxtRef.offsetRight;
+        const posY = this.aboutTxtRef.offsetTop;
         return [posX, posY];
     };
 
-    getWidHei = () => {
+    getMovePos = () => {
+        const posX = this.aboutTxtRef.offsetLeft;
+        const posY = this.aboutTxtRef.offsetTop;
         const wid = this.aboutTxtRef.offsetWidth;
         const hei = this.aboutTxtRef.offsetHeight;
-        return [wid, hei]
+        const winWid = window.innerWidth;
+        const winHei = window.innerHeight;
+        let moveX, moveY;
+        winWid > 900
+            ? moveX = winWid / 2 - posX + wid / 2
+            : moveX = 0;
+        winWid < 900
+            ? moveY = winHei / 2 - posY + hei / 2
+            : moveY = 0;
+        console.log(moveX, moveY);
+        return [moveX, moveY];
     };
 
     isClicked = e => {
         e.stopPropagation();
         const [posX, posY] = this.getPos();
-        const [wid, hei] = this.getWidHei();
+        const [moveX, MoveY] = this.getMovePos();
         const { yangStore } = this.props;
-        yangStore.getAboutWidHei(wid, hei);
+
+        if (yangStore.aniEnd) return;
+
         yangStore.getAboutPos(posX, posY);
+        yangStore.getAboutMove(moveX, MoveY);
         yangStore.whatIsClicked('about');
-        setTimeout(yangStore.whenAniEnded, 500);
     };
 
     render() {
@@ -88,6 +125,7 @@ class HomeAbout extends React.Component {
             >
                 <AboutTxt
                     ref={ref => this.aboutTxtRef = ref}
+                    aniEnd={yangStore.aniEnd}
                     menuClicked={yangStore.menuClicked}
                 >
                     <BigTxt
@@ -97,8 +135,8 @@ class HomeAbout extends React.Component {
                 </AboutTxt>
                 <AboutHidden
                     about={yangStore.about}
-                    aboutHei={yangStore.aboutHei}
-                    aboutWid={yangStore.aboutWid}
+                    aboutMoveY={yangStore.aboutMoveY}
+                    aboutMoveX={yangStore.aboutMoveX}
                     aniEnd={yangStore.aniEnd}
                     posX={yangStore.aboutX}
                     posY={yangStore.aboutY}

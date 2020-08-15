@@ -30,6 +30,7 @@ class Logo extends React.Component {
         return (
             <LogoWrapper
                 draggable="true"
+                onTransitionEnd={yangStore.whenAniEnded}
                 menuClicked={yangStore.menuClicked}
             >
                 {fontSizes.map(item => {

@@ -27,6 +27,28 @@ const CraftTxt = styled.div`
     }
 `;
 
+// const CraftHidden = styled.div`
+//     width: max-content;
+//     height: max-content;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     letter-spacing: 5px;
+//     opacity: ${props => props.craft && !props.about ? '1' : '0'};
+//     position: absolute;
+//     transition: all 0.3s ease;
+//     z-index: 4;
+
+//     ${props => props.aniEnd && css`
+//         top: calc(50% - ${props.MoveX / 2}px);
+//         left: calc(50% - ${props.MoveY / 2}px);
+//     `}
+//     ${props => !props.aniEnd && css`
+//         top: ${props => props.craftY}px;
+//         left: ${props => props.craftX}px;
+//     `}
+// `;
+
 const CraftHidden = styled.div`
     width: max-content;
     height: max-content;
@@ -36,12 +58,11 @@ const CraftHidden = styled.div`
     letter-spacing: 5px;
     opacity: ${props => props.craft && !props.about ? '1' : '0'};
     position: absolute;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     z-index: 4;
 
     ${props => props.aniEnd && css`
-        top: calc(50% - ${props.craftHei / 2}px);
-        left: calc(50% - ${props.craftWid / 2}px);
+        transform: translate(${props.craftMoveX}, ${props.craftMoveY});
     `}
     ${props => !props.aniEnd && css`
         top: ${props => props.craftY}px;
@@ -55,31 +76,45 @@ const CraftHidden = styled.div`
 class HomeCraft extends React.Component {
     getPos = () => {
         const posX = this.craftTxtRef.offsetLeft;
-        const posY = this.craftTxtRef.offsetRight;
+        const posY = this.craftTxtRef.offsetTop;
         return [posX, posY];
     };
 
-    getWidHei = () => {
+    getMovePos = () => {
+        const posX = this.craftTxtRef.offsetLeft;
+        const posY = this.craftTxtRef.offsetTop;
         const wid = this.craftTxtRef.offsetWidth;
         const hei = this.craftTxtRef.offsetHeight;
-        return [wid, hei]
+        const winWid = window.innerWidth;
+        const winHei = window.innerHeight;
+        let moveX, moveY;
+        posX > winWid / 2
+            ? moveX = winWid / 2 - posX - wid / 2
+            : moveX = 0;
+        posY > winHei / 2
+            ? moveY = winHei / 2 - posY - hei / 2
+            : moveY = 0;
+        return [moveX, moveY];
     };
 
     isClicked = e => {
         e.stopPropagation();
         const [posX, posY] = this.getPos();
-        const [wid, hei] = this.getWidHei();
+        const [MoveX, MoveY] = this.getMovePos();
         const { yangStore } = this.props;
-        yangStore.getCraftWidHei(wid, hei);
-        yangStore.getCraftPos(posX, posY);
+
+        if (yangStore.aniEnd) return;
+
         yangStore.whatIsClicked('craft');
-        setTimeout(yangStore.whenAniEnded, 500);
+        yangStore.getCraftPos(posX, posY);
+        yangStore.getCraftMove(MoveX, MoveY);
     };
 
     render() {
         const {
             yangStore
         } = this.props;
+        console.log(yangStore.aniEnd)
         return (
             <HomeCraftBox
                 draggable="true"
@@ -97,8 +132,8 @@ class HomeCraft extends React.Component {
                 <CraftHidden
                     aniEnd={yangStore.aniEnd}
                     craft={yangStore.craft}
-                    craftHei={yangStore.craftHei}
-                    craftWid={yangStore.craftWid}
+                    MoveX={yangStore.craftMoveX}
+                    MoveY={yangStore.craftMoveY}
                     posX={yangStore.craftX}
                     posY={yangStore.craftY}
                 >

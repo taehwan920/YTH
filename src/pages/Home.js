@@ -26,6 +26,7 @@ const HomeContentsBox = styled.section`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    transition: all 0.3s ease;
 
     @media (max-width: 899px) {
         height: 90vh;
