@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { observer, inject } from 'mobx-react';
 import Logo from '../components/Logo';
+import Footer from '../components/home/Footer';
+import HomeCover from '../components/home/HomeCover';
 
 const HomeWrapper = styled.main`
     background-color: #c3d3c2;
@@ -21,16 +23,6 @@ const HomeContentsBox = styled.section`
     align-items: center;
 `;
 
-const HomeFooter = styled.footer`
-    width: 100%;
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`;
-
 @inject('yangStore')
 @observer
 
@@ -41,12 +33,13 @@ class Home extends React.Component {
         } = this.props;
         return (
             <HomeWrapper>
+                <HomeCover />
                 <HomeContentsBox>
-                    <article>ABOUT</article>
+                    <article cursor="pointer">ABOUT</article>
                     <Logo />
                     <article>CRAFT</article>
                 </HomeContentsBox>
-                <HomeFooter>GITHUB MAIL</HomeFooter>
+                <Footer />
             </HomeWrapper>
         )
     }

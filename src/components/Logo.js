@@ -23,7 +23,9 @@ const LogoTxt = styled.span`
 
 export default () => {
     return (
-        <LogoWrapper>
+        <LogoWrapper
+            draggable="true"
+        >
             <LogoTxt
                 fontSize={140}
             >
@@ -41,4 +43,4 @@ export default () => {
                 </LogoTxt>
         </LogoWrapper>
     )
-}
+};
