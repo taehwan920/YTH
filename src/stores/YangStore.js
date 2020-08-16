@@ -8,11 +8,9 @@ export default class {
 
     // ABOUT, CRAFT의 폰트 크기 관련 state
     @observable menuFontSize = 80;
-    @observable arrowFontSize = 100;
     @action changeFontSize = isMobile => {
         if (isMobile) {
             this.menuFontSize = 60;
-            this.arrowFontSize = 80;
         }
     };
 

@@ -23,6 +23,11 @@ const AboutHidden = styled.div`
 @observer
 
 class HiddenAbout extends React.Component {
+    clickAniEnded = e => {
+        e.stopPropagation();
+        window.location.replace('/about');
+    };
+
     render() {
         const {
             yangStore
@@ -35,6 +40,7 @@ class HiddenAbout extends React.Component {
                 aniEnd={yangStore.aniEnd}
                 aboutX={yangStore.aboutX}
                 aboutY={yangStore.aboutY}
+                onTransitionEnd={this.clickAniEnded}
             >
                 <BigTxt
                     fontSize={yangStore.menuFontSize}

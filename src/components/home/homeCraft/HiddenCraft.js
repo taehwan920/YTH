@@ -25,6 +25,11 @@ const CraftHidden = styled.div`
 @observer
 
 class HiddenCraft extends React.Component {
+    clickAniEnded = e => {
+        e.stopPropagation();
+        window.location.replace('/craft');
+    };
+
     render() {
         const {
             yangStore
@@ -37,6 +42,7 @@ class HiddenCraft extends React.Component {
                 craftHei={yangStore.craftHei}
                 craftX={yangStore.craftX}
                 craftY={yangStore.craftY}
+                onTransitionEnd={this.clickAniEnded}
             >
                 <BigTxt
                     fontSize={yangStore.menuFontSize}
