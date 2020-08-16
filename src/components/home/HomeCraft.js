@@ -20,11 +20,12 @@ const CraftTxt = styled.div`
     align-items: center;
     letter-spacing: 5px;
     opacity: ${props => props.menuClicked ? '0' : '1'};
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     z-index: 5;
 
     &:hover {
         color: #3f48cc;
+        letter-spacing: 10px;
     }
 `;
 

@@ -25,7 +25,7 @@ const AboutHidden = styled.div`
 class HiddenAbout extends React.Component {
     clickAniEnded = e => {
         e.stopPropagation();
-        window.location.replace('/about');
+        window.location.href = '/about';
     };
 
     render() {

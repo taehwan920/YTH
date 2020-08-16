@@ -25,6 +25,7 @@ const AboutTxt = styled.div`
 
     &:hover {
         color: #3f48cc;
+        letter-spacing: 10px;
     }
 `;
 

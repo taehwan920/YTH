@@ -12,7 +12,7 @@ const CoverWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.75s ease-in;
+    transition: all 0.45s ease-in;
     z-index: 1000;
 
     ${props => props.unwrapped && css`
@@ -24,17 +24,25 @@ const CoverWrapper = styled.div`
     
 `;
 
-const UnwrapKF = keyframes`
-    0%, 30% { width: 100px; }
-    100% {width: 0px; }
+const LineBox = styled.div`
+    width: 175px;
+    height: 2.5px;
+    overflow: hidden;
 `;
 
-const CoverUnwrapper = styled.div`
+const UnwrapKF = keyframes`
+    0% { transform: translateX(-350px); }
+    92% { transform: translateX(175px); }
+    100% { transform: translateX(175px); }
+`;
+
+const CoverLine = styled.div`
     background: black;
-    width: 0px;
-    height: 3px;
-    animation: ${UnwrapKF} 0.7s ease-out;
-    ${props => props.unwrpped && css`
+    width: 350px;
+    height: 100%;
+    transform: translateX(-350px);
+    animation: ${UnwrapKF} 1s ease-in-out;
+    ${props => props.unwrapped && css`
         display: none;
     `}
 `;
@@ -53,10 +61,12 @@ class HomeCover extends React.Component {
                 onTransitionEnd={() => this.coverRef.style.zIndex = -1000}
                 unwrapped={yangStore.coverUnwrapped}
             >
-                <CoverUnwrapper
-                    unwrapped={yangStore.coverUnwrapped}
-                    onAnimationEnd={yangStore.ifUnwrapped}
-                />
+                <LineBox>
+                    <CoverLine
+                        unwrapped={yangStore.coverUnwrapped}
+                        onAnimationEnd={yangStore.ifUnwrapped}
+                    />
+                </LineBox>
             </CoverWrapper>
         )
     }

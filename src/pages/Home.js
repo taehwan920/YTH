@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { observer, inject } from 'mobx-react';
 import { isMobile } from 'react-device-detect';
-import Logo from '../components/Logo';
+import Logo from '../components/home/Logo';
 import Footer from '../components/home/Footer';
 import HomeCover from '../components/home/HomeCover';
 import HomeAbout from '../components/home/HomeAbout';

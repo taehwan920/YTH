@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 import { inject, observer } from 'mobx-react';
-import BigTxt from './BigTxt';
+import BigTxt from '../BigTxt';
 
 const LogoWrapper = styled.div`
     background-color: #6aaf66;

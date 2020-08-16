@@ -27,7 +27,7 @@ const CraftHidden = styled.div`
 class HiddenCraft extends React.Component {
     clickAniEnded = e => {
         e.stopPropagation();
-        window.location.replace('/craft');
+        window.location.href = '/craft';
     };
 
     render() {
