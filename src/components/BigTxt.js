@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 const BigTxt = styled.span`
     color: inherit;
+    text-align: center;
     ${props => props.fontSize && css`
         height: ${props.fontSize}px;
         line-height: ${props.fontSize}px;

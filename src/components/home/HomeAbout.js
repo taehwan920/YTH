@@ -15,7 +15,7 @@ const HomeAboutBox = styled.article`
 const AboutTxt = styled.div`
     width: max-content;
     height: max-content;
-    display: ${props => props.aniEnd ? 'none' : 'flex'};
+    display: flex;
     justify-content: center;
     align-items: center;
     letter-spacing: 5px;
@@ -25,7 +25,6 @@ const AboutTxt = styled.div`
 
     &:hover {
         color: #3f48cc;
-        letter-spacing: 10px;
     }
 `;
 
@@ -42,6 +41,7 @@ class HomeAbout extends React.Component {
     getSize = () => {
         const wid = this.aboutTxtRef.offsetWidth;
         const hei = this.aboutTxtRef.offsetHeight;
+        console.log('a', wid, hei)
         return [wid, hei];
     };
 

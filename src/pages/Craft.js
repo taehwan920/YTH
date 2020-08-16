@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MenuOpener from '../components/MenuOpener';
 
 const CraftWrapper = styled.main`
     background-color: #c3d3c2;
@@ -11,7 +12,10 @@ class Craft extends React.Component {
     render() {
         return (
             <CraftWrapper>
-                Craft
+                Here is craft
+                <MenuOpener
+                    menuTxt="CRAFT"
+                />
             </CraftWrapper>
         )
     }

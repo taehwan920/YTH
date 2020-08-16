@@ -42,6 +42,8 @@ export default class {
     @action getAboutSize = (X, Y) => {
         this.aboutWid = X;
         this.aboutHei = Y;
+        const txtSize = [X, Y]
+        localStorage.setItem('txtSize', JSON.stringify(txtSize));
     };
 
     // craft 위치 선정
@@ -57,5 +59,18 @@ export default class {
     @action getCraftSize = (X, Y) => {
         this.craftWid = X;
         this.craftHei = Y;
+        const txtSize = [X, Y]
+        localStorage.setItem('txtSize', JSON.stringify(txtSize));
+    };
+
+    //menuOpener 관련
+    @observable openerLoaded = false;
+    @observable txtMoved = false;
+
+    @action loadingIsOver = () => {
+        this.openerLoaded = true;
+    };
+    @action movingIsOver = () => {
+        this.txtMoved = true;
     };
 };

@@ -22,11 +22,13 @@ const LogoWrapper = styled.div`
 @observer
 
 class Logo extends React.Component {
+    tempKey = -1;
     render() {
         const {
             yangStore
         } = this.props;
         const fontSizes = isMobile ? [[100, 'YTH'], [75, 'PORT'], [70, 'FOLIO']] : [[140, 'YTH'], [101, 'PORT'], [92.5, 'FOLIO']];
+
         return (
             <LogoWrapper
                 draggable="true"
@@ -34,10 +36,12 @@ class Logo extends React.Component {
                 menuClicked={yangStore.menuClicked}
             >
                 {fontSizes.map(item => {
+                    this.tempKey++
                     return (
                         <BigTxt
                             fontSize={item[0]}
                             txtItem={item[1]}
+                            key={this.tempKey}
                         />
                     )
                 })}
