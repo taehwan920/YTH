@@ -41,7 +41,6 @@ class HomeCraft extends React.Component {
     getSize = () => {
         const wid = this.craftTxtRef.offsetWidth;
         const hei = this.craftTxtRef.offsetHeight;
-        console.log('c', wid, hei)
         return [wid, hei];
     };
 

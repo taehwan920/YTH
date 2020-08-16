@@ -41,7 +41,6 @@ class HomeAbout extends React.Component {
     getSize = () => {
         const wid = this.aboutTxtRef.offsetWidth;
         const hei = this.aboutTxtRef.offsetHeight;
-        console.log('a', wid, hei)
         return [wid, hei];
     };
 

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { inject, observer } from 'mobx-react';
 import BigTxt from './BigTxt';
-import { isMobile } from 'react-device-detect';
 
 const OpenerWrapper = styled.div`
     background: #c3d3c2;
@@ -11,7 +10,7 @@ const OpenerWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.45s ease-in;
+    transition: all 0.3s ease-in-out;
     opacity: ${props => props.txtMoved ? 0 : 1};
     z-index: ${props => props.txtMoved ? -1000 : 1000};
 `;
@@ -23,7 +22,7 @@ const TxtWrapper = styled.div`
     transition: top 0.5s, left 0.7s ease-in-out;
     letter-spacing: 5px;
 
-    top: ${props => props.openerLoaded ? '30px' : `calc(50% - ${props.txtHei / 2}px)`};
+    top: ${props => props.openerLoaded ? '10px' : `calc(50% - ${props.txtHei / 2}px)`};
     left: ${props => `calc(50% - ${props.txtWid / 2}px)`};
 `;
 
