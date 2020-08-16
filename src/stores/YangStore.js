@@ -34,30 +34,30 @@ export default class {
     // about 위치 선정
     @observable aboutX = 0;
     @observable aboutY = 0;
-    @observable aboutMoveX = 0;
-    @observable aboutMoveY = 0;
+    @observable aboutWid = 0;
+    @observable aboutHei = 0;
 
     @action getAboutPos = (X, Y) => {
         this.aboutX = X;
         this.aboutY = Y;
     };
-    @action getAboutMove = (X, Y) => {
-        this.aboutMoveX = X;
-        this.aboutMoveY = Y;
+    @action getAboutSize = (X, Y) => {
+        this.aboutWid = X;
+        this.aboutHei = Y;
     };
 
     // craft 위치 선정
     @observable craftX = 0;
     @observable craftY = 0;
-    @observable craftMoveX = 0;
-    @observable craftMoveY = 0;
+    @observable craftWid = 0;
+    @observable craftHei = 0;
 
     @action getCraftPos = (X, Y) => {
         this.craftX = X;
         this.craftY = Y;
     };
-    @action getCraftMove = (X, Y) => {
-        this.craftMoveX = X;
-        this.craftMoveY = Y;
+    @action getCraftSize = (X, Y) => {
+        this.craftWid = X;
+        this.craftHei = Y;
     };
 };

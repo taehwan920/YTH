@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { inject, observer } from 'mobx-react';
 import BigTxt from '../BigTxt';
+import HiddenCraft from './homeCraft/HiddenCraft';
 
 const HomeCraftBox = styled.article`
     width: max-content;
@@ -19,55 +20,12 @@ const CraftTxt = styled.div`
     align-items: center;
     letter-spacing: 5px;
     opacity: ${props => props.menuClicked ? '0' : '1'};
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     z-index: 5;
 
     &:hover {
         color: #3f48cc;
     }
-`;
-
-// const CraftHidden = styled.div`
-//     width: max-content;
-//     height: max-content;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     letter-spacing: 5px;
-//     opacity: ${props => props.craft && !props.about ? '1' : '0'};
-//     position: absolute;
-//     transition: all 0.3s ease;
-//     z-index: 4;
-
-//     ${props => props.aniEnd && css`
-//         top: calc(50% - ${props.MoveX / 2}px);
-//         left: calc(50% - ${props.MoveY / 2}px);
-//     `}
-//     ${props => !props.aniEnd && css`
-//         top: ${props => props.craftY}px;
-//         left: ${props => props.craftX}px;
-//     `}
-// `;
-
-const CraftHidden = styled.div`
-    width: max-content;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: 5px;
-    opacity: ${props => props.craft && !props.about ? '1' : '0'};
-    position: absolute;
-    transition: transform 0.3s ease;
-    z-index: 4;
-
-    ${props => props.aniEnd && css`
-        transform: translate(${props.craftMoveX}, ${props.craftMoveY});
-    `}
-    ${props => !props.aniEnd && css`
-        top: ${props => props.craftY}px;
-        left: ${props => props.craftX}px;
-    `}
 `;
 
 @inject('yangStore')
@@ -80,41 +38,29 @@ class HomeCraft extends React.Component {
         return [posX, posY];
     };
 
-    getMovePos = () => {
-        const posX = this.craftTxtRef.offsetLeft;
-        const posY = this.craftTxtRef.offsetTop;
+    getSize = () => {
         const wid = this.craftTxtRef.offsetWidth;
         const hei = this.craftTxtRef.offsetHeight;
-        const winWid = window.innerWidth;
-        const winHei = window.innerHeight;
-        let moveX, moveY;
-        posX > winWid / 2
-            ? moveX = winWid / 2 - posX - wid / 2
-            : moveX = 0;
-        posY > winHei / 2
-            ? moveY = winHei / 2 - posY - hei / 2
-            : moveY = 0;
-        return [moveX, moveY];
+        return [wid, hei];
     };
 
     isClicked = e => {
         e.stopPropagation();
         const [posX, posY] = this.getPos();
-        const [MoveX, MoveY] = this.getMovePos();
+        const [wid, hei] = this.getSize();
         const { yangStore } = this.props;
 
         if (yangStore.aniEnd) return;
 
-        yangStore.whatIsClicked('craft');
         yangStore.getCraftPos(posX, posY);
-        yangStore.getCraftMove(MoveX, MoveY);
+        yangStore.getCraftSize(wid, hei);
+        yangStore.whatIsClicked('craft');
     };
 
     render() {
         const {
             yangStore
         } = this.props;
-        console.log(yangStore.aniEnd)
         return (
             <HomeCraftBox
                 draggable="true"
@@ -129,19 +75,7 @@ class HomeCraft extends React.Component {
                         txtItem="CRAFT"
                     />
                 </CraftTxt>
-                <CraftHidden
-                    aniEnd={yangStore.aniEnd}
-                    craft={yangStore.craft}
-                    MoveX={yangStore.craftMoveX}
-                    MoveY={yangStore.craftMoveY}
-                    posX={yangStore.craftX}
-                    posY={yangStore.craftY}
-                >
-                    <BigTxt
-                        fontSize={yangStore.menuFontSize}
-                        txtItem="CRAFT"
-                    />
-                </CraftHidden>
+                <HiddenCraft />
             </HomeCraftBox>
         )
     }
