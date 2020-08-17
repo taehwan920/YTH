@@ -13,6 +13,7 @@ const HeaderWrapper = styled.header`
     border-bottom: 2px solid #6aaf66;
     border: none;
     position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import MenuOpener from '../components/MenuOpener';
 import AboutHeader from '../components/about/AboutHeader';
 import AboutCloser from '../components/about/AboutCloser';
+import AboutMain from '../components/about/AboutMain';
 
 const AboutWrapper = styled.main`
     background-color: #c3d3c2;
     width: 100%;
-    height: 100%;
+    height: max-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
 `;
 
 class About extends React.Component {
@@ -15,6 +19,7 @@ class About extends React.Component {
         return (
             <AboutWrapper>
                 <AboutHeader />
+                <AboutMain />
                 <MenuOpener
                     menuTxt="ABOUT"
                 />

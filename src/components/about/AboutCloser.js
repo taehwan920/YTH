@@ -4,27 +4,30 @@ import { inject, observer } from 'mobx-react';
 
 const CloserWrapper = styled.div`
     background: #c3d3c2;
-    width: 150%;
-    height: 100%;
-    position: relative;
+    width: 200%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
     transform: ${props => props.closerActive ? 'translateX(0)' : 'translateX(-100%)'};
-    transition: transform 1.32s cubic-bezier(0.55, 0.15, 0.3, 1);
+    transition: transform 1.17s cubic-bezier(0.55, 0.15, 0.3, 1);
     z-index: 1000;
 
     @media (max-width: 799px){
-        transition: transform 1s cubic-bezier(0.55, 0.15, 0.3, 1);
+        width: 200%;
+        transition: transform 0.8s cubic-bezier(0.55, 0.3, 0.15, 1);
     }
 `;
 
 const CloserColorPanel = styled.div`
     background: #3f48cc;
-    width: 20%;
+    width: 30%;
     height: 100%;
     position: absolute;
     right: 0;
 
     @media (max-width: 799px){
-        width: 30%;
+        width: 50%;
     }
 `;
 
