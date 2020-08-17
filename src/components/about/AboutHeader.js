@@ -36,7 +36,9 @@ class AboutHeader extends React.Component {
         } = this.props;
         return (
             <HeaderWrapper>
-                <HeaderTxtWrapper>
+                <HeaderTxtWrapper
+                    draggable="true"
+                >
                     <BigTxt
                         fontSize={yangStore.menuFontSize}
                         txtItem="ABOUT"

@@ -10,16 +10,16 @@ const OpenerWrapper = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     opacity: ${props => props.txtMoved ? 0 : 1};
-    z-index: ${props => props.txtMoved ? -1000 : 1000};
+    z-index: 1000;
 `;
 
 const TxtWrapper = styled.div`
     width: max-content;
     height: max-content;
     position: absolute;
-    transition: top 0.5s, left 0.7s ease-in-out;
+    transition: top 0.6s, left 0.6s ease-in-out;
     letter-spacing: 5px;
 
     top: ${props => props.openerLoaded ? '10px' : `calc(50% - ${props.txtHei / 2}px)`};
@@ -31,12 +31,17 @@ const TxtWrapper = styled.div`
 
 class MenuOpener extends React.Component {
     componentDidMount() {
-        setTimeout(this.props.yangStore.loadingIsOver, 200);
+        setTimeout(this.props.yangStore.loadingIsOver, 150);
     };
 
     getTxtSize = () => {
         const textSize = JSON.parse(localStorage.getItem('txtSize'));
         return textSize
+    };
+
+    movingOver = e => {
+        e.stopPropagation();
+        this.props.yangStore.movingIsOver();
     };
 
     render() {
@@ -48,10 +53,11 @@ class MenuOpener extends React.Component {
         return (
             <OpenerWrapper
                 ref={ref => this.openerRef = ref}
+                onTransitionEnd={() => this.openerRef.style.zIndex = -1000}
                 txtMoved={yangStore.txtMoved}
             >
                 <TxtWrapper
-                    onTransitionEnd={yangStore.movingIsOver}
+                    onTransitionEnd={this.movingOver}
                     openerLoaded={yangStore.openerLoaded}
                     txtWid={txtWid}
                     txtHei={txtHei}
