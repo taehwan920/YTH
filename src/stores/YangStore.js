@@ -86,4 +86,19 @@ export default class {
     @action activateAboutCloser = () => {
         this.aboutCloserActive = true;
     };
+
+    //Introduce 텍스트 애니메이션 관련
+    @observable firstTxtSwitch = false;
+    @observable secondTxtSwitch = false;
+    @observable thirdTxtSwitch = false;
+
+    @action firstON = () => {
+        this.firstTxtSwitch = true;
+    };
+    @action secondON = () => {
+        this.secondTxtSwitch = true;
+    };
+    @action thirdON = () => {
+        this.thirdTxtSwitch = true;
+    }
 };

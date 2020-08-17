@@ -50,7 +50,6 @@ class AboutBackspace extends React.Component {
         const {
             yangStore
         } = this.props;
-        console.log(yangStore.aboutBSclicked)
         return (
             <BackspaceBox
                 draggable="true"

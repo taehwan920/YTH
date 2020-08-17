@@ -44,6 +44,12 @@ class MenuOpener extends React.Component {
         this.props.yangStore.movingIsOver();
     };
 
+    transitionIsOver = e => {
+        e.stopPropagation();
+        this.openerRef.style.zIndex = -1000
+        this.props.yangStore.firstON();
+    };
+
     render() {
         const {
             menuTxt,
@@ -53,7 +59,7 @@ class MenuOpener extends React.Component {
         return (
             <OpenerWrapper
                 ref={ref => this.openerRef = ref}
-                onTransitionEnd={() => this.openerRef.style.zIndex = -1000}
+                onTransitionEnd={this.transitionIsOver}
                 txtMoved={yangStore.txtMoved}
             >
                 <TxtWrapper
