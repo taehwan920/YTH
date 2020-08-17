@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import BigTxt from '../../BigTxt';
 import IntroTxtAni from './introduce/IntroTxtAni';
 import { inject, observer } from 'mobx-react';
+import AboutTitles from './AboutTitles';
 
 const IntroduceWrapper = styled.article`
     width: 100%;
@@ -11,20 +11,6 @@ const IntroduceWrapper = styled.article`
     position: relative;
     display: flex;
     flex-direction: column;
-`;
-
-const IntroduceTitle = styled.div`
-    width: 100%;
-    height: max-content;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #6aaf66;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-    letter-spacing: 10px;
-
-    @media (max-width: 799px) {
-        letter-spacing: 5px;
-    }
 `;
 
 const IntroSloganBox = styled.div`
@@ -62,12 +48,9 @@ class Introduce extends React.Component {
         } = this.props;
         return (
             <IntroduceWrapper>
-                <IntroduceTitle>
-                    <BigTxt
-                        fontSize={60}
-                        txtItem="Introduction"
-                    />
-                </IntroduceTitle>
+                <AboutTitles
+                    txtItem="Introduction"
+                />
                 <IntroSloganRight>
                     <IntroTxtAni
                         fontSize={55}

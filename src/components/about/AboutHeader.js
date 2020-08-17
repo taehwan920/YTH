@@ -17,6 +17,7 @@ const HeaderWrapper = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 500;
 `;
 
 const HeaderTxtWrapper = styled.div`

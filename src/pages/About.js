@@ -13,6 +13,7 @@ const AboutWrapper = styled.main`
     position: relative;
     display: flex;
     justify-content: center;
+    overflow-y: scroll;
 `;
 
 class About extends React.Component {

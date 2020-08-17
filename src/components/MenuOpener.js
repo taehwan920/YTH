@@ -6,7 +6,7 @@ import BigTxt from './BigTxt';
 const OpenerWrapper = styled.div`
     background: #c3d3c2;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 import { inject, observer } from 'mobx-react';
-import Introduce from './aboutMain/Introduce';
+import Introduce from './aboutMain/Introduction';
+import Tech from './aboutMain/Tech';
 
 const MainWrapper = styled.section`
     width: 90%;
@@ -12,7 +13,8 @@ const MainWrapper = styled.section`
     margin-top: ${props => props.isMobile ? 80 : 100}px;
     
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 `;
 
 @inject('yangStore')
@@ -25,6 +27,7 @@ class AboutMain extends React.Component {
                 isMobile={isMobile}
             >
                 <Introduce />
+                <Tech />
             </MainWrapper>
         )
     }
