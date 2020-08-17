@@ -9,6 +9,7 @@ const AboutWrapper = styled.main`
     background-color: #c3d3c2;
     width: 100%;
     height: max-content;
+    min-height: 100%;
     position: relative;
     display: flex;
     justify-content: center;

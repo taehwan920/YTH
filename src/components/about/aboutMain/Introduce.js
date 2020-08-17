@@ -98,7 +98,7 @@ class Introduce extends React.Component {
                         aniEnded={null}
                     />
                     <IntroDescBox>
-                        "프로그래밍도 외국어 공부처럼"
+                        "프로그래밍도 외국어를 배우듯이"
                     </IntroDescBox>
                 </IntroSloganRight>
             </IntroduceWrapper>

@@ -74,8 +74,6 @@ export default class {
         this.txtMoved = true;
     };
 
-    // aboutheader관련
-
     //aboutheader backspace 관련
     @observable aboutBSclicked = false;
     @observable aboutCloserActive = false;
