@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BigTxt from '../BigTxt';
 import { inject, observer } from 'mobx-react';
+import AboutBackspace from './aboutHeader/AboutBackspace';
 
 const HeaderWrapper = styled.header`
     background: rgba(106, 175, 102, 0.97);
@@ -36,6 +37,7 @@ class AboutHeader extends React.Component {
         } = this.props;
         return (
             <HeaderWrapper>
+                <AboutBackspace />
                 <HeaderTxtWrapper
                     draggable="true"
                 >

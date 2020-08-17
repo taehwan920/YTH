@@ -73,4 +73,17 @@ export default class {
     @action movingIsOver = () => {
         this.txtMoved = true;
     };
+
+    // aboutheader관련
+
+    //aboutheader backspace 관련
+    @observable aboutBSclicked = false;
+    @observable aboutCloserActive = false;
+
+    @action toggleAboutBS = () => {
+        this.aboutBSclicked = !this.aboutBSclicked;
+    };
+    @action activateAboutCloser = () => {
+        this.aboutCloserActive = true;
+    };
 };
