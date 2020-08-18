@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import debounce from '../../../../debounce';
 
 const TechItemWrapper = styled.div`
     width: 100%;
@@ -40,6 +41,7 @@ const TechLogo = styled.img`
 
 const TechName = styled.span`
     color: ${props => props.nameColor ? props.nameColor : 'black'};
+    text-shadow: 2px 2px 2px gray;
     font-size: 50px;
     letter-spacing: 2px;
     transition: all .3s ease;
@@ -70,28 +72,12 @@ const TechDesc = styled.span`
     }
 `;
 
-
-function debounce(func, wait = 5, immediate = false) {
-    let timeout;
-    return function () {
-        const context = this, args = arguments;
-        const later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
-
 class TechItems extends React.Component {
     state = {
         active: false
     };
 
-    checkScroll = e => {
+    checkScroll = () => {
         const slideItem = this.techItemRef;
         const slideInAt = (window.scrollY + window.innerHeight) - slideItem.clientHeight / 2;
         const itemBottom = slideItem.offsetTop + slideItem.clientHeight;
@@ -104,6 +90,10 @@ class TechItems extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', debounce(this.checkScroll));
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', debounce(this.checkScroll));
     };
 
     render() {

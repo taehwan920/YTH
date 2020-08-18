@@ -10,6 +10,16 @@ const ItemWrapper = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    @media(max-width: 899px) {
+        padding-left: 20px;
+    }
+
+    &:nth-child(1) {
+        margin-top: 50px;
+    }
 `;
 
 const ItemType = styled.div`

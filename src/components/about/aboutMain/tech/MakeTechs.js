@@ -51,6 +51,12 @@ export default class extends React.Component {
             techDesc: 'html5는요'
         },
         {
+            techLogo: './images/logos/mobx.png',
+            techName: 'mobX',
+            nameColor: '#db5a14',
+            techDesc: 'html5는요'
+        },
+        {
             techLogo: './images/logos/aws.png',
             techName: 'AWS',
             nameColor: '#ff9900',
