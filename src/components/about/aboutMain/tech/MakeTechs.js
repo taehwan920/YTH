@@ -58,12 +58,15 @@ export default class extends React.Component {
         },
     ];
 
+    techIdx = -1;
     render() {
         return (
             <React.Fragment>
                 {this.techContents.map(content => {
+                    this.techIdx++
                     return (
                         <TechItems
+                            key={this.techIdx}
                             techLogo={content.techLogo}
                             techName={content.techName}
                             nameColor={content.nameColor}

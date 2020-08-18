@@ -11,17 +11,13 @@ const TechWrapper = styled.article`
     flex-direction: column;
 `;
 
-class Tech extends React.Component {
-    render() {
-        return (
-            <TechWrapper>
-                <AboutTitles
-                    txtItem="Tech"
-                />
-                <MakeTechs />
-            </TechWrapper>
-        )
-    }
+export default () => {
+    return (
+        <TechWrapper>
+            <AboutTitles
+                txtItem="Tech"
+            />
+            <MakeTechs />
+        </TechWrapper>
+    )
 };
-
-export default Tech;

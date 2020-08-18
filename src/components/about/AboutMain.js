@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect';
 import { inject, observer } from 'mobx-react';
 import Introduce from './aboutMain/Introduction';
 import Tech from './aboutMain/Tech';
+import Contact from './aboutMain/Contact';
 
 const MainWrapper = styled.section`
     width: 90%;
@@ -28,6 +29,7 @@ class AboutMain extends React.Component {
             >
                 <Introduce />
                 <Tech />
+                <Contact />
             </MainWrapper>
         )
     }
