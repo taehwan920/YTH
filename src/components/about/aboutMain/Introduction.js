@@ -13,6 +13,19 @@ const IntroduceWrapper = styled.article`
     flex-direction: column;
 `;
 
+const BulbImg = styled.img`
+    width: 300px;
+    position: absolute;
+    top: 120px;
+    left: calc(50% - 150px);    
+    transition: all 0.3s ease;
+    opacity: 0.4;
+
+    @media(max-width: 899px) {
+        opacity: 0;
+    }
+`;
+
 const IntroSloganBox = styled.div`
     width: 100%;
     height: max-content;
@@ -48,6 +61,9 @@ class Introduce extends React.Component {
         } = this.props;
         return (
             <IntroduceWrapper>
+                <BulbImg
+                    src="./images/bulb.png"
+                />
                 <AboutTitles
                     txtItem="Introduction"
                 />

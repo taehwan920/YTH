@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 const CloserWrapper = styled.div`
     background: #c3d3c2;
     width: 200%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
