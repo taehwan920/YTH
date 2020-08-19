@@ -47,13 +47,11 @@ class CraftMain extends React.Component {
     };
 
     didTouch = e => {
-        e.preventDefault();
         this.touchStart = true;
         this.touchPosX = e.screenX;
     };
 
     didEndTouch = e => {
-        e.preventDefault();
         this.touchStart = false;
         const { yangStore } = this.props;
         const nowPosX = e.screenX;
