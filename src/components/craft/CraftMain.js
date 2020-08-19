@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTouchEvents from "react-touch-events";
 import { isMobile } from 'react-device-detect';
-import MakeCrafts from './craftMain/MakeCrafts';
 import { inject, observer } from 'mobx-react';
+import MakeCrafts from './craftMain/MakeCrafts';
 import PageCounter from './craftMain/PageCounter';
 
 const MainWrapper = styled.section`
@@ -22,43 +23,29 @@ const MainWrapper = styled.section`
 
 class CraftMain extends React.Component {
     mouseDown = false;
-    touchStart = false;
     posX = null;
-    touchPosX = null;
 
     componentDidMount() {
-        if (isMobile) {
-            document.addEventListener('touchstart', this.didTouch);
-            document.addEventListener('touchend', this.didEndTouch);
-        } else {
-            this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
-            this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
-        }
+        this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
+        this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
     };
 
     componentWillUnmount() {
-        if (isMobile) {
-            document.removeEventListener('touchstart', this.didTouch);
-            document.removeEventListener('touchend', this.didEndTouch);
-        } else {
-            this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
-            this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
-        }
+        this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
+        this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
     };
 
-    didTouch = e => {
-        this.touchStart = true;
-        this.touchPosX = e.screenX;
-    };
-
-    didEndTouch = e => {
-        this.touchStart = false;
+    didSwipe = direction => {
         const { yangStore } = this.props;
-        const nowPosX = e.screenX;
-        if (nowPosX < this.touchPosX - 35 || nowPosX > this.touchPosX + 35) {
-            nowPosX > this.touchPosX
-                ? yangStore.stepBack()
-                : yangStore.stepNext();
+        switch (direction) {
+            case "left":
+                yangStore.stepNext();
+                break;
+            case "right":
+                yangStore.stepBack();
+                break;
+            default:
+                console.log('you swiped!');
         }
     };
 
@@ -80,13 +67,17 @@ class CraftMain extends React.Component {
     };
     render() {
         return (
-            <MainWrapper
-                ref={ref => this.craftMainRef = ref}
-                isMobile={isMobile}
+            <ReactTouchEvents
+                onSwipe={this.didSwipe}
             >
-                <MakeCrafts />
-                <PageCounter />
-            </MainWrapper>
+                <MainWrapper
+                    ref={ref => this.craftMainRef = ref}
+                    isMobile={isMobile}
+                >
+                    <MakeCrafts />
+                    <PageCounter />
+                </MainWrapper>
+            </ReactTouchEvents>
         )
     }
 };
