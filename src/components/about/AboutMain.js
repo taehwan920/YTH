@@ -9,7 +9,7 @@ import Contact from './aboutMain/Contact';
 const MainWrapper = styled.section`
     width: 90%;
     max-width: 1200px;
-    min-width: 480px;
+    min-width: 370px;
     height: max-content;
     margin-top: ${props => props.isMobile ? 80 : 100}px;
     

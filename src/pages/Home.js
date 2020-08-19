@@ -16,7 +16,6 @@ const HomeWrapper = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 `;
 
 const HomeContentsBox = styled.section`

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import IntroTxtAni from './introduction/IntroTxtAni';
 import { inject, observer } from 'mobx-react';
 import AboutTitles from './AboutTitles';
+import { isMobile } from 'react-device-detect';
 
 const IntroduceWrapper = styled.article`
     width: 100%;
@@ -54,6 +55,10 @@ const IntroDescBox = styled.div`
     @media (max-width: 899px) {
         font-size: 20px;
     }
+
+    @media (max-width: 499px) {
+        font-size: 16px;
+    }
 `;
 
 @inject('yangStore')
@@ -64,6 +69,7 @@ class Introduce extends React.Component {
         const {
             yangStore
         } = this.props;
+        const fontSize = isMobile ? 40 : 55;
         return (
             <IntroduceWrapper>
                 <BulbImg
@@ -74,7 +80,7 @@ class Introduce extends React.Component {
                 />
                 <IntroSloganRight>
                     <IntroTxtAni
-                        fontSize={55}
+                        fontSize={fontSize}
                         txtItem="호기심"
                         isSwitchON={yangStore.firstTxtSwitch}
                         aniEnded={yangStore.secondON}
@@ -85,7 +91,7 @@ class Introduce extends React.Component {
                 </IntroSloganRight>
                 <IntroSloganLeft>
                     <IntroTxtAni
-                        fontSize={55}
+                        fontSize={fontSize}
                         txtItem="집요함"
                         isSwitchON={yangStore.secondTxtSwitch}
                         aniEnded={yangStore.thirdON}
@@ -96,7 +102,7 @@ class Introduce extends React.Component {
                 </IntroSloganLeft>
                 <IntroSloganRight>
                     <IntroTxtAni
-                        fontSize={55}
+                        fontSize={fontSize}
                         txtItem="꾸준함"
                         isSwitchON={yangStore.thirdTxtSwitch}
                         aniEnded={null}

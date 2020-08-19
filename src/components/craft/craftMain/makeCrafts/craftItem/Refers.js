@@ -4,8 +4,6 @@ import styled from 'styled-components';
 const ReferWrapper = styled.div`
     width: 100%;
     height: max-content;
-    position: absolute;
-    bottom: 90px;
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
@@ -31,6 +29,11 @@ const ReferItem = styled.a`
     @media(max-width: 899px) {
         font-size: 22px;
         margin: 0px 30px;
+    }
+
+    @media(max-width: 499px) {
+        font-size: 18px;
+        margin: 20px;
     }
 `;
 

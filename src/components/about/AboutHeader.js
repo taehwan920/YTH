@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BigTxt from '../BigTxt';
 import { inject, observer } from 'mobx-react';
 import AboutBackspace from './aboutHeader/AboutBackspace';
+import { isMobile } from 'react-device-detect';
 
 const HeaderWrapper = styled.header`
     background: rgba(106, 175, 102, 0.97);
@@ -37,6 +38,7 @@ class AboutHeader extends React.Component {
         const {
             yangStore
         } = this.props;
+        yangStore.changeFontSize(isMobile);
         return (
             <HeaderWrapper>
                 <AboutBackspace />

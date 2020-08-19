@@ -8,7 +8,7 @@ const LogoWrapper = styled.div`
     background-color: #6aaf66;
     width: max-content;
     height: max-content;
-    padding: 20px 40px;
+    padding: ${props => props.isMobile ? '15px 35px' : '20px 40px'};
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -27,11 +27,11 @@ class Logo extends React.Component {
         const {
             yangStore
         } = this.props;
-        const fontSizes = isMobile ? [[100, 'YTH'], [75, 'PORT'], [70, 'FOLIO']] : [[140, 'YTH'], [101, 'PORT'], [92.5, 'FOLIO']];
-
+        const fontSizes = isMobile ? [[90, 'YTH'], [65, 'PORT'], [60, 'FOLIO']] : [[140, 'YTH'], [101, 'PORT'], [92.5, 'FOLIO']];
         return (
             <LogoWrapper
                 draggable="true"
+                isMobile={isMobile}
                 onTransitionEnd={yangStore.whenAniEnded}
                 menuClicked={yangStore.menuClicked}
             >

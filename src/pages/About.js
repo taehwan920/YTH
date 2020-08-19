@@ -7,7 +7,7 @@ import MenuCloser from '../components/MenuCloser';
 
 const AboutWrapper = styled.main`
     background-color: #c3d3c2;
-    width: 100%;
+    width: 100vw;
     height: max-content;
     min-height: 100%;
     position: relative;

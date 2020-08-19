@@ -4,6 +4,7 @@ import BigTxt from '../../../BigTxt';
 import TechBoxes from './craftItem/TechBoxes';
 import { inject, observer } from 'mobx-react';
 import Refers from './craftItem/Refers';
+import { isMobile } from 'react-device-detect';
 
 const ItemWrapper = styled.article`
     width: min-content;
@@ -113,6 +114,7 @@ class CraftItem extends React.Component {
             githubUrl,
             craftUrl,
         } = content;
+        const fontSize = isMobile ? 40 : 70;
         return (
             <ItemWrapper
                 data-key={craftIdx}
@@ -127,7 +129,7 @@ class CraftItem extends React.Component {
                     </ImgBox>
                     <TitleBox>
                         <BigTxt
-                            fontSize={70}
+                            fontSize={fontSize}
                             txtItem={craftTitle}
                         />
                     </TitleBox>

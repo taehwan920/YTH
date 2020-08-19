@@ -5,6 +5,7 @@ import { inject, observer } from 'mobx-react';
 import CraftBackspace from './craftHeader/CraftBackspace';
 import CraftBackPage from './craftHeader/CraftBackPage';
 import CraftNextPage from './craftHeader/CraftNextPage';
+import { isMobile } from 'react-device-detect';
 
 const HeaderWrapper = styled.header`
     background: rgba(106, 175, 102, 0.97);
@@ -43,6 +44,7 @@ class CraftHeader extends React.Component {
             craftIdxNow,
             craftLastIdx,
         } = yangStore;
+        yangStore.changeFontSize(isMobile);
         return (
             <HeaderWrapper>
                 {craftIdxNow === 1

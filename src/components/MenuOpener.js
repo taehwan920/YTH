@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { inject, observer } from 'mobx-react';
 import BigTxt from './BigTxt';
+import { isMobile } from 'react-device-detect';
 
 const OpenerWrapper = styled.div`
     background: #c3d3c2;
@@ -56,6 +57,7 @@ class MenuOpener extends React.Component {
             menuTxt,
             yangStore
         } = this.props;
+        yangStore.changeFontSize(isMobile);
         const [txtWid, txtHei] = this.getTxtSize();
         const nowScroll = window.scrollY;
         return (
