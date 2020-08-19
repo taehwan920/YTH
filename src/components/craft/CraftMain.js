@@ -28,8 +28,8 @@ class CraftMain extends React.Component {
 
     componentDidMount() {
         if (isMobile) {
-            this.craftMainRef.addEventListener('touchstart', this.didTouch);
-            this.craftMainRef.addEventListener('touchend', this.didEndTouch);
+            document.addEventListener('touchstart', this.didTouch);
+            document.addEventListener('touchend', this.didEndTouch);
         } else {
             this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
             this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
@@ -38,11 +38,11 @@ class CraftMain extends React.Component {
 
     componentWillUnmount() {
         if (isMobile) {
+            document.removeEventListener('touchstart', this.didTouch);
+            document.removeEventListener('touchend', this.didEndTouch);
+        } else {
             this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
             this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
-        } else {
-            this.craftMainRef.removeEventListener('touchstart', this.didTouch);
-            this.craftMainRef.removeEventListener('touchend', this.didEndTouch);
         }
     };
 
