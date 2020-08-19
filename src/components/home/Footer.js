@@ -31,7 +31,7 @@ const FooterLink = styled.a`
         letter-spacing: 5px;
     }
     &:first-child {
-        margin-right: 30px;
+        margin-right: 90px;
     }
 `;
 
