@@ -27,7 +27,7 @@ const CloserColorPanel = styled.div`
     right: 0;
 
     @media (max-width: 799px){
-        width: 50%;
+        width: 40%;
     }
 `;
 

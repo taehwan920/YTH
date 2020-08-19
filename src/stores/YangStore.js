@@ -10,7 +10,7 @@ export default class {
     @observable menuFontSize = 80;
     @action changeFontSize = isMobile => {
         if (isMobile) {
-            this.menuFontSize = 60;
+            this.menuFontSize = 50;
         }
     };
 

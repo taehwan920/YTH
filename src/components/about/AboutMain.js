@@ -9,9 +9,9 @@ import Contact from './aboutMain/Contact';
 const MainWrapper = styled.section`
     width: 90%;
     max-width: 1200px;
-    min-width: 370px;
+    min-width: 320px;
     height: max-content;
-    margin-top: ${props => props.isMobile ? 80 : 100}px;
+    margin-top: ${props => props.isMobile ? 70 : 100}px;
     
     display: flex;
     flex-direction: column;

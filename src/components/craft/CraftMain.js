@@ -8,8 +8,8 @@ import PageCounter from './craftMain/PageCounter';
 const MainWrapper = styled.section`
     width: max-content;
     min-width: 100vw;
-    height: calc(100% - ${props => props.isMobile ? 80 : 100}px);
-    margin-top: ${props => props.isMobile ? 80 : 100}px;
+    height: calc(100% - ${props => props.isMobile ? 70 : 100}px);
+    margin-top: ${props => props.isMobile ? 70 : 100}px;
     position: relative;
     overflow-y: scroll;
 
@@ -17,16 +17,6 @@ const MainWrapper = styled.section`
         cursor: grab;
     }
 `;
-
-// const MobileLine = styled.div`
-//     background: skyblue;
-//     width: 375px;
-//     height: 5px;
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     transform: translateX(-50%);
-// `;
 
 @inject('yangStore')
 @observer
@@ -72,7 +62,6 @@ class CraftMain extends React.Component {
             >
                 <MakeCrafts />
                 <PageCounter />
-                {/* <MobileLine /> */}
             </MainWrapper>
         )
     }
