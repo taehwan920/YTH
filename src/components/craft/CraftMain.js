@@ -64,9 +64,13 @@ class CraftMain extends React.Component {
         const { yangStore } = this.props;
         const nowPosX = e.offsetX;
         if (nowPosX < this.posX - 70 || nowPosX > this.posX + 70) {
-            nowPosX > this.posX
-                ? yangStore.stepBack()
-                : yangStore.stepNext();
+            if (nowPosX > this.posX) {
+                yangStore.craftIdxNow > 1
+                    ? yangStore.stepBack()
+                    : yangStore.activateAboutCloser();
+            } else {
+                yangStore.stepNext();
+            }
         }
     };
     render() {
