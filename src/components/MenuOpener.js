@@ -7,7 +7,7 @@ const OpenerWrapper = styled.div`
     background: #c3d3c2;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transition: opacity 0.3s ease-in-out;
@@ -22,7 +22,7 @@ const TxtWrapper = styled.div`
     transition: top 0.6s, left 0.6s ease-in-out;
     letter-spacing: 5px;
 
-    top: ${props => props.openerLoaded ? `${props.nowScroll + 10}px` : `calc(50vh - ${props.txtHei / 2}px)`};
+    top: ${props => props.openerLoaded ? `10px` : `calc(50vh - ${props.txtHei / 2}px)`};
     left: ${props => `calc(50% - ${props.txtWid / 2}px)`};
 `;
 
