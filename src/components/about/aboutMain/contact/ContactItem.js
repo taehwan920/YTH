@@ -6,7 +6,7 @@ const ItemWrapper = styled.div`
     width: max-content;
     height: max-content;
     padding-left: 40px;
-    margin-top: 40px;
+    margin-top: ${props => props.isMobile ? 20 : 40}px;
     position: relative;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ const ItemType = styled.div`
     height: 50px;
     margin-right: 20px;
     font-family: 'Noto sans';
-    font-size: ${props => props.isMobile ? 18 : 28}px;
+    font-size: ${props => props.isMobile ? 22 : 28}px;
     white-space: pre-wrap;
 
     @media(max-width: 899px){
@@ -40,7 +40,7 @@ const ItemContent = styled.span`
     width: max-content;
     height: 50px;
     white-space: pre-wrap;
-    font-size: ${props => props.isMobile ? 18 : 28}px;
+    font-size: ${props => props.isMobile ? 22 : 28}px;
     font-family: 'Noto sans';
 `;
 
@@ -101,6 +101,7 @@ export default class extends React.Component {
         return (
             <ItemWrapper
                 onClick={this.itemClicked}
+                isMobile={isMobile}
             >
                 <ItemType
                     isMobile={isMobile}

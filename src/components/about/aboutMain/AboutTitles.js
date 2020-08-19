@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BigTxt from '../../BigTxt';
+import { isMobile } from 'react-device-detect';
 
 const AboutTitle = styled.div`
     width: 100%;
@@ -17,10 +18,11 @@ const AboutTitle = styled.div`
 `;
 
 export default ({ txtItem }) => {
+    const fontSize = isMobile ? 40 : 60;
     return (
         <AboutTitle>
             <BigTxt
-                fontSize={60}
+                fontSize={fontSize}
                 txtItem={txtItem}
             />
         </AboutTitle>
