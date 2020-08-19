@@ -11,7 +11,7 @@ const MainWrapper = styled.section`
     margin-top: ${props => props.isMobile ? 70 : 100}px;
     position: relative;
     overflow-x: hidden;
-    
+
     &:hover {
         cursor: grab;
     }
@@ -22,15 +22,46 @@ const MainWrapper = styled.section`
 
 class CraftMain extends React.Component {
     mouseDown = false;
+    touchStart = false;
     posX = null;
+    touchPosX = null;
+
     componentDidMount() {
-        this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
-        this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
+        if (isMobile) {
+            this.craftMainRef.addEventListener('touchstart', this.didTouch);
+            this.craftMainRef.addEventListener('touchend', this.didEndTouch);
+        } else {
+            this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
+            this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
+        }
     };
 
     componentWillUnmount() {
-        this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
-        this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
+        if (isMobile) {
+            this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
+            this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
+        } else {
+            this.craftMainRef.removeEventListener('touchstart', this.didTouch);
+            this.craftMainRef.removeEventListener('touchend', this.didEndTouch);
+        }
+    };
+
+    didTouch = e => {
+        e.preventDefault();
+        this.touchStart = true;
+        this.touchPosX = e.screenX;
+    };
+
+    didEndTouch = e => {
+        e.preventDefault();
+        this.touchStart = false;
+        const { yangStore } = this.props;
+        const nowPosX = e.screenX;
+        if (nowPosX < this.touchPosX - 35 || nowPosX > this.touchPosX + 35) {
+            nowPosX > this.touchPosX
+                ? yangStore.stepBack()
+                : yangStore.stepNext();
+        }
     };
 
     didMouseDown = e => {

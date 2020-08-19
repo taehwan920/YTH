@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 const ReferWrapper = styled.div`
     width: 100%;
@@ -11,6 +12,10 @@ const ReferWrapper = styled.div`
     @media(max-width: 899px) {
         margin: 10px 0px;
     }
+
+    ${props => props.isMobile && css`
+        margin-bottom: 0px;
+    `}
 `;
 
 const ReferItem = styled.a`
@@ -31,7 +36,7 @@ const ReferItem = styled.a`
     }
 
     @media(max-width: 499px) {
-        font-size: 18px;
+        font-size: 14px;
         margin: 20px;
     }
 `;
@@ -56,7 +61,9 @@ const Craft = styled(ReferItem)`
 
 export default ({ github, craft }) => {
     return (
-        <ReferWrapper>
+        <ReferWrapper
+            isMobile={isMobile}
+        >
             <Github
                 rel="noopener noreferrer"
                 href={github}
