@@ -46,7 +46,7 @@ class Footer extends React.Component {
             >
                 <FooterGithub
                     draggable="true"
-                    href="https://github.com/taehwan920/YTH"
+                    href="https://github.com/taehwan920"
                     rel="noopener noreferrer"
                     target="_blank"
                 >

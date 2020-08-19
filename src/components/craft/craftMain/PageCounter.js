@@ -9,12 +9,12 @@ const CounterWrapper = styled.div`
     display: flex;
     align-items: center;
     position: absolute;
-    top: 40px;
+    top: 24px;
     left: 50%;
     transform: translateX(-50%);
 
     @media (max-width: 899px) {
-        top: 30px;
+        top: 20px;
     }
 `;
 

@@ -3,31 +3,32 @@ import styled from 'styled-components';
 import BigTxt from '../../../BigTxt';
 import TechBoxes from './craftItem/TechBoxes';
 import { inject, observer } from 'mobx-react';
+import Refers from './craftItem/Refers';
 
 const ItemWrapper = styled.article`
     width: min-content;
     height: 100%;
-    margin-top: 90px;
+    margin-top: 60px;
     position: absolute;
     left: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 1.1s ease-out;
+    transition: transform .8s ease-out;
     transform: ${props => {
         if (props.craftIdx < props.idxNow) {
-            return `translateX(calc(-50% - 250vw));`;
+            return `translateX(calc(-50% - 200vw));`;
         } else if (props.craftIdx === props.idxNow) {
             return `translateX(-50%);`;
         } else if (props.craftIdx > props.idxNow) {
-            return `translateX(calc(50% + 250vw));`;
+            return `translateX(calc(50% + 200vw));`;
         }
     }}
 
     @media(max-width: 899px) {
         width: 100%;
-        margin-top: 75px;
-        transition: transform 0.75s ease-out;
+        margin-top: 50px;
+        transition: transform 0.55s ease-out;
     }
 `;
 
@@ -82,6 +83,7 @@ const TitleBox = styled.div`
 const DescBox = styled.div`
     width: 100%;
     padding: 20px 0px 0px 25px;
+    margin-bottom: 10px;
     white-space: pre-wrap;
     font-family: 'Noto Sans', 'Noto Sans KR';
     font-size: 18px;
@@ -89,6 +91,7 @@ const DescBox = styled.div`
     @media(max-width: 899px) {
         font-size: 16px;
         padding: 0px 30px;
+        margin: 10px 0px;
     }
 `;
 
@@ -107,6 +110,8 @@ class CraftItem extends React.Component {
             craftTitle,
             techs,
             desc,
+            githubUrl,
+            craftUrl,
         } = content;
         return (
             <ItemWrapper
@@ -130,7 +135,13 @@ class CraftItem extends React.Component {
                 <TechBoxes
                     techs={techs}
                 />
-                <DescBox>{desc}</DescBox>
+                <DescBox>
+                    {desc}
+                </DescBox>
+                <Refers
+                    github={githubUrl}
+                    craft={craftUrl}
+                />
             </ItemWrapper>
         )
     }

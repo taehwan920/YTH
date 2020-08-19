@@ -10,7 +10,7 @@ const TechBox = styled.div`
     flex-wrap: wrap;
 
     @media(max-width: 899px) {
-        padding: 18px;
+        padding: 10px;
         padding-left: 25px;
     }
 `;
@@ -27,6 +27,7 @@ const Tech = styled.span`
     font-size: 16px;
 
     @media(max-width: 899px) {
+        margin-top: 10px;
         font-size: 14px;
     }
 `;

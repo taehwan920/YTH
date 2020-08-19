@@ -17,7 +17,7 @@ const NextArrowBox = styled.div`
     cursor: pointer;
 
     ${props => props.isClicked && css`
-        animation: ${RotateAni} 0.35s ease-in-out;
+        animation: ${RotateAni} 0.3s ease-in-out;
     `}
 `;
 
