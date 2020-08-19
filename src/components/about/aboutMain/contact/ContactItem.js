@@ -5,7 +5,7 @@ import { isMobile } from 'react-device-detect';
 const ItemWrapper = styled.div`
     width: max-content;
     height: max-content;
-    padding-left: 40px;
+    padding-left: ${props => props.isMobile ? 20 : 40}px;
     margin-top: ${props => props.isMobile ? 15 : 40}px;
     position: relative;
     display: flex;
