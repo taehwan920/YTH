@@ -42,7 +42,11 @@ class CraftMain extends React.Component {
                 yangStore.stepNext();
                 break;
             case "right":
-                yangStore.stepBack();
+                if (yangStore.craftIdxNow > 1) {
+                    yangStore.stepBack();
+                } else {
+                    yangStore.activateAboutCloser();
+                }
                 break;
             default:
                 console.log('you swiped!');
