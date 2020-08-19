@@ -85,6 +85,7 @@ export default class extends React.Component {
 
     itemClicked = e => {
         e.stopPropagation();
+        e.preventDefault();
         this.toggleClicked();
         this.copyToClipboard();
         setTimeout(this.toggleClicked, 400);
