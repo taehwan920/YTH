@@ -18,15 +18,15 @@ const MainWrapper = styled.section`
     }
 `;
 
-const MobileLine = styled.div`
-    background: skyblue;
-    width: 375px;
-    height: 5px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-`;
+// const MobileLine = styled.div`
+//     background: skyblue;
+//     width: 375px;
+//     height: 5px;
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translateX(-50%);
+// `;
 
 @inject('yangStore')
 @observer
