@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 import MakeCrafts from './craftMain/MakeCrafts';
 import { inject, observer } from 'mobx-react';
+import PageCounter from './craftMain/PageCounter';
 
 const MainWrapper = styled.section`
     width: max-content;
@@ -43,9 +44,11 @@ class CraftMain extends React.Component {
         this.mouseDown = false;
         const { yangStore } = this.props;
         const nowPosX = e.offsetX;
-        nowPosX > this.posX
-            ? yangStore.stepBack()
-            : yangStore.stepNext();
+        if (nowPosX < this.posX - 50 || nowPosX > this.posX + 50) {
+            nowPosX > this.posX
+                ? yangStore.stepBack()
+                : yangStore.stepNext();
+        }
     };
     render() {
         return (
@@ -54,6 +57,7 @@ class CraftMain extends React.Component {
                 isMobile={isMobile}
             >
                 <MakeCrafts />
+                <PageCounter />
             </MainWrapper>
         )
     }

@@ -7,7 +7,7 @@ import { inject, observer } from 'mobx-react';
 const ItemWrapper = styled.article`
     width: min-content;
     height: 100%;
-    margin: 100px 0px;
+    margin-top: 90px;
     position: absolute;
     left: 50%;
     display: flex;
@@ -26,7 +26,7 @@ const ItemWrapper = styled.article`
 
     @media(max-width: 899px) {
         width: 100%;
-        margin: 50px 0px;
+        margin-top: 75px;
         transition: transform 0.75s ease-out;
     }
 `;
@@ -99,12 +99,15 @@ class CraftItem extends React.Component {
     render() {
         const {
             craftIdx,
+            content,
+            yangStore
+        } = this.props;
+        const {
             imgUrl,
             craftTitle,
             techs,
             desc,
-            yangStore
-        } = this.props;
+        } = content;
         return (
             <ItemWrapper
                 data-key={craftIdx}

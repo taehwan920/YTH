@@ -105,10 +105,7 @@ class MakeCrafts extends React.Component {
                         <CraftItem
                             key={this.craftIdx}
                             craftIdx={this.craftIdx}
-                            imgUrl={content.imgUrl}
-                            craftTitle={content.craftTitle}
-                            techs={content.techs}
-                            desc={content.desc}
+                            content={content}
                         />
                     )
                 })}

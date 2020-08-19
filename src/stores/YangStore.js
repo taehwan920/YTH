@@ -110,11 +110,13 @@ export default class {
     @action stepBack = () => {
         if (this.craftIdxNow === 1) return;
         this.craftIdxNow--;
-        console.log(this.craftIdxNow)
     };
     @action stepNext = () => {
         if (this.craftIdxNow === this.craftLastIdx) return;
         this.craftIdxNow++;
-        console.log(this.craftIdxNow)
+    };
+    @action setPage = num => {
+        if (num > this.craftLastIdx || num < 1) return;
+        this.craftIdxNow = num;
     };
 };
