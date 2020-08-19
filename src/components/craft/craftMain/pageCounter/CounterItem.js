@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 const Counter = styled.div`
     width: 40px;
     height: 100%;
-    margin: 0px 10px;
+    margin: 0px 3px;
     border-radius: 3px;
     trasition: background 1s ease;
     

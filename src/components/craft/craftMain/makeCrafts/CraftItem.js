@@ -8,14 +8,13 @@ import { isMobile } from 'react-device-detect';
 
 const ItemWrapper = styled.article`
     width: min-content;
-    height: 100%;
+    height: max-content;
     margin-top: 60px;
     position: absolute;
     left: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
     transition: transform .8s ease-out;
     transform: ${props => {
         if (props.craftIdx < props.idxNow) {
@@ -69,7 +68,7 @@ const CraftImg = styled.img`
     min-width: 300px;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
 `;
 
 const TitleBox = styled.div`

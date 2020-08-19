@@ -10,8 +10,6 @@ const MainWrapper = styled.section`
     height: calc(100% - ${props => props.isMobile ? 70 : 100}px);
     margin-top: ${props => props.isMobile ? 70 : 100}px;
     position: relative;
-    overflow-x: hidden;
-    overflow-y: scroll;
 
     &:hover {
         cursor: grab;
@@ -27,15 +25,11 @@ class CraftMain extends React.Component {
     componentDidMount() {
         this.craftMainRef.addEventListener('mousedown', this.didMouseDown);
         this.craftMainRef.addEventListener('mouseup', this.didMouseUp);
-        this.craftMainRef.addEventListener('touchstart', this.didMouseDown);
-        this.craftMainRef.addEventListener('touchend', this.didMouseUp);
     };
 
     componentWillUnmount() {
         this.craftMainRef.removeEventListener('mousedown', this.didMouseDown);
         this.craftMainRef.removeEventListener('mouseup', this.didMouseUp);
-        this.craftMainRef.removeEventListener('touchstart', this.didMouseDown);
-        this.craftMainRef.removeEventListener('touchend', this.didMouseUp);
     };
 
     didMouseDown = e => {

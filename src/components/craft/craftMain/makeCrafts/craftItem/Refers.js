@@ -6,11 +6,10 @@ const ReferWrapper = styled.div`
     height: max-content;
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    margin: 20px 0px;
 
     @media(max-width: 899px) {
-        margin-top: 20px;
-        bottom: 70px;
+        margin: 10px 0px;
     }
 `;
 

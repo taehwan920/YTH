@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 
 html, body, #root {
+  background: #c3d3c2;
   width: 100%;
   height: 100%;
 }

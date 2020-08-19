@@ -6,7 +6,7 @@ const ItemWrapper = styled.div`
     width: max-content;
     height: max-content;
     padding-left: 40px;
-    margin-top: ${props => props.isMobile ? 20 : 40}px;
+    margin-top: ${props => props.isMobile ? 15 : 40}px;
     position: relative;
     display: flex;
     align-items: center;
@@ -19,16 +19,16 @@ const ItemWrapper = styled.div`
     }
 
     &:nth-child(1) {
-        margin-top: 50px;
+        margin-top: ${props => props.isMobile ? 20 : 50}px;
     }
 `;
 
 const ItemType = styled.div`
     width: max-content;
     height: 50px;
-    margin-right: 20px;
+    margin-right: ${props => props.isMobile ? 10 : 20}px;
     font-family: 'Noto sans';
-    font-size: ${props => props.isMobile ? 22 : 28}px;
+    font-size: ${props => props.isMobile ? 20 : 28}px;
     white-space: pre-wrap;
 
     @media(max-width: 899px){
@@ -40,7 +40,7 @@ const ItemContent = styled.span`
     width: max-content;
     height: 50px;
     white-space: pre-wrap;
-    font-size: ${props => props.isMobile ? 22 : 28}px;
+    font-size: ${props => props.isMobile ? 20 : 28}px;
     font-family: 'Noto sans';
 `;
 
