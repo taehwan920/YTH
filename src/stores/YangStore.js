@@ -108,12 +108,12 @@ export default class {
         this.craftLastIdx = arr.length;
     };
     @action stepBack = () => {
-        if (this.craftIdx === 1) return;
+        if (this.craftIdxNow === 1) return;
         this.craftIdxNow--;
         console.log(this.craftIdxNow)
     };
     @action stepNext = () => {
-        if (this.craftIdx === this.craftLastIdx) return;
+        if (this.craftIdxNow === this.craftLastIdx) return;
         this.craftIdxNow++;
         console.log(this.craftIdxNow)
     };

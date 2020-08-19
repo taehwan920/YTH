@@ -13,19 +13,15 @@ const CraftWrapper = styled.main`
     display: flex;
 `;
 
-class Craft extends React.Component {
-    render() {
-        return (
-            <CraftWrapper>
-                <CraftHeader />
-                <CraftMain />
-                <MenuOpener
-                    menuTxt="CRAFT"
-                />
-                <MenuCloser />
-            </CraftWrapper>
-        )
-    }
+export default () => {
+    return (
+        <CraftWrapper>
+            <CraftHeader />
+            <CraftMain />
+            <MenuOpener
+                menuTxt="CRAFT"
+            />
+            <MenuCloser />
+        </CraftWrapper>
+    )
 };
-
-export default Craft;

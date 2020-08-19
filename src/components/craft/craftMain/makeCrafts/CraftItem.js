@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import BigTxt from '../../../BigTxt';
 import TechBoxes from './craftItem/TechBoxes';
 import { inject, observer } from 'mobx-react';
@@ -13,21 +13,21 @@ const ItemWrapper = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform .75s ease;
+    transition: transform 1.1s ease-out;
     transform: ${props => {
-        console.log(props.craftIdx, props.idxNow)
         if (props.craftIdx < props.idxNow) {
-            return `translateX(calc(-50% - 300vw));`;
+            return `translateX(calc(-50% - 250vw));`;
         } else if (props.craftIdx === props.idxNow) {
             return `translateX(-50%);`;
         } else if (props.craftIdx > props.idxNow) {
-            return `translateX(calc(50% + 300vw));`;
+            return `translateX(calc(50% + 250vw));`;
         }
     }}
 
     @media(max-width: 899px) {
         width: 100%;
         margin: 50px 0px;
+        transition: transform 0.75s ease-out;
     }
 `;
 
@@ -63,7 +63,7 @@ const CraftImg = styled.img`
     width: 100%;
     max-width: 750px;
     min-width: 300px;
-    border: 5px solid black;
+    border: none;
     border-radius: 12px;
     box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 1px rgba(0, 0, 0, 0.4);
 `;
