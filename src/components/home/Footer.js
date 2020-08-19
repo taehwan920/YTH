@@ -23,12 +23,15 @@ const HomeFooter = styled.footer`
     }
 `;
 
-const FooterGithub = styled.a`
+const FooterLink = styled.a`
     letter-spacing: 2px;
     transition: all 0.5s ease;
     &:hover {
         color: #3f48cc;
         letter-spacing: 5px;
+    }
+    &:first-child {
+        margin-right: 30px;
     }
 `;
 
@@ -44,14 +47,22 @@ class Footer extends React.Component {
             <HomeFooter
                 menuClicked={yangStore.menuClicked}
             >
-                <FooterGithub
+                <FooterLink
                     draggable="true"
                     href="https://github.com/taehwan920"
                     rel="noopener noreferrer"
                     target="_blank"
                 >
                     GITHUB
-                </FooterGithub>
+                </FooterLink>
+                <FooterLink
+                    draggable="true"
+                    href="https://hitzi.tistory.com/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    BLOG
+                </FooterLink>
             </HomeFooter>
         )
     }
