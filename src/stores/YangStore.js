@@ -99,4 +99,22 @@ export default class {
     @action thirdON = () => {
         this.thirdTxtSwitch = true;
     }
+
+    //Craft 파트 관련
+    @observable craftIdxNow = 1;
+    @observable craftLastIdx = 1;
+
+    @action getLastIdx = arr => {
+        this.craftLastIdx = arr.length;
+    };
+    @action stepBack = () => {
+        if (this.craftIdx === 1) return;
+        this.craftIdxNow--;
+        console.log(this.craftIdxNow)
+    };
+    @action stepNext = () => {
+        if (this.craftIdx === this.craftLastIdx) return;
+        this.craftIdxNow++;
+        console.log(this.craftIdxNow)
+    };
 };

@@ -111,7 +111,9 @@ class TechItems extends React.Component {
                 ref={ref => this.techItemRef = ref}
                 active={active}
             >
-                <TechTitleBox>
+                <TechTitleBox
+                    draggable="true"
+                >
                     <TechLogoBox>
                         <TechLogo
                             src={techLogo}

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuOpener from '../components/MenuOpener';
 import AboutHeader from '../components/about/AboutHeader';
-import AboutCloser from '../components/about/AboutCloser';
 import AboutMain from '../components/about/AboutMain';
+import MenuOpener from '../components/MenuOpener';
+import MenuCloser from '../components/MenuCloser';
 
 const AboutWrapper = styled.main`
     background-color: #c3d3c2;
@@ -25,7 +25,7 @@ class About extends React.Component {
                 <MenuOpener
                     menuTxt="ABOUT"
                 />
-                <AboutCloser />
+                <MenuCloser />
             </AboutWrapper>
         )
     }

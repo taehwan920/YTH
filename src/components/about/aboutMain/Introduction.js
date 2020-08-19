@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import IntroTxtAni from './introduce/IntroTxtAni';
+import IntroTxtAni from './introduction/IntroTxtAni';
 import { inject, observer } from 'mobx-react';
 import AboutTitles from './AboutTitles';
 
@@ -102,7 +102,7 @@ class Introduce extends React.Component {
                         aniEnded={null}
                     />
                     <IntroDescBox>
-                        "프로그래밍도 외국어를 배우듯이"
+                        "항상 꾸준히 1일 1커밋"
                     </IntroDescBox>
                 </IntroSloganRight>
             </IntroduceWrapper>
