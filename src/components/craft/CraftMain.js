@@ -10,7 +10,8 @@ const MainWrapper = styled.section`
     height: calc(100% - ${props => props.isMobile ? 70 : 100}px);
     margin-top: ${props => props.isMobile ? 70 : 100}px;
     position: relative;
-
+    overflow-x: hidden;
+    
     &:hover {
         cursor: grab;
     }
