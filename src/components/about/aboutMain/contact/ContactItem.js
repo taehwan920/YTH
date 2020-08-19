@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 const ItemWrapper = styled.div`
     width: max-content;
@@ -27,7 +28,7 @@ const ItemType = styled.div`
     height: 50px;
     margin-right: 20px;
     font-family: 'Noto sans';
-    font-size: 28px;
+    font-size: ${props => props.isMobile ? 18 : 28}px;
     white-space: pre-wrap;
 
     @media(max-width: 899px){
@@ -39,7 +40,7 @@ const ItemContent = styled.span`
     width: max-content;
     height: 50px;
     white-space: pre-wrap;
-    font-size: 28px;
+    font-size: ${props => props.isMobile ? 18 : 28}px;
     font-family: 'Noto sans';
 `;
 
@@ -74,7 +75,6 @@ export default class extends React.Component {
     copyToClipboard = () => {
         const hidden = this.hiddenRef;
         hidden.value = this.props.content;
-        console.log(this.props.content);
         hidden.select();
         document.execCommand('copy');
     };
@@ -102,10 +102,14 @@ export default class extends React.Component {
             <ItemWrapper
                 onClick={this.itemClicked}
             >
-                <ItemType>
+                <ItemType
+                    isMobile={isMobile}
+                >
                     {type}
                 </ItemType>
-                <ItemContent>
+                <ItemContent
+                    isMobile={isMobile}
+                >
                     {content}
                 </ItemContent>
                 <Copied

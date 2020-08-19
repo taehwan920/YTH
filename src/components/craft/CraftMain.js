@@ -6,12 +6,10 @@ import { inject, observer } from 'mobx-react';
 import PageCounter from './craftMain/PageCounter';
 
 const MainWrapper = styled.section`
-    width: max-content;
-    min-width: 100vw;
+    width: 100%;
     height: calc(100% - ${props => props.isMobile ? 70 : 100}px);
     margin-top: ${props => props.isMobile ? 70 : 100}px;
     position: relative;
-    overflow-y: scroll;
 
     &:hover {
         cursor: grab;

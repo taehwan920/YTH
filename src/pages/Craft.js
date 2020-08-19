@@ -11,7 +11,6 @@ const CraftWrapper = styled.main`
     height: 100%;
     position: relative;
     display: flex;
-    overflow-y: scroll;
 `;
 
 export default () => {

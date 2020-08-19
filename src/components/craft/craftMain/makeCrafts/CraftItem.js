@@ -15,6 +15,7 @@ const ItemWrapper = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
     transition: transform .8s ease-out;
     transform: ${props => {
         if (props.craftIdx < props.idxNow) {
@@ -32,6 +33,7 @@ const ItemWrapper = styled.article`
         transition: transform 0.55s ease-out;
     }
 `;
+
 
 const UpperBox = styled.div`
     width: max-content;
