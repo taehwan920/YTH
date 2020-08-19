@@ -64,11 +64,11 @@ const TechDescBox = styled.div`
 const TechDesc = styled.span`
     white-space: pre-wrap;
     font-family: 'Noto Sans', 'Noto Sans KR';
-    font-size: 22px;
+    font-size: 20px;
     transition: all .3s ease;
 
     @media(max-width: 899px) {
-        font-size: 18px;
+        font-size: 16px;
     }
 `;
 

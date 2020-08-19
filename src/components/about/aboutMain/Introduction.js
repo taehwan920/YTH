@@ -47,8 +47,13 @@ const IntroDescBox = styled.div`
     width: max-content;
     height: max-content;
     margin-top: 10px;
+    transition: all .4s ease;
     font-size: 24px;
     font-family: "Noto Sans KR";
+
+    @media (max-width: 899px) {
+        font-size: 20px;
+    }
 `;
 
 @inject('yangStore')
