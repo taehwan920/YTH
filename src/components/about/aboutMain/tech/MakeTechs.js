@@ -18,7 +18,7 @@ export default class extends React.Component {
         {
             techLogo: './images/logos/js.png',
             techName: 'JavaScript',
-            techDesc: '자바스크립트의 동작 원리에 관하여 주로 공부했습니다. Event loop, Hoisting 등 자바스크립트만의 특징은 물론 Event bubbling, debounce, throttle과 같은 Event Handling관련 개념 또한 흥미를 갖고 학습했습니다. ES6문법을 주로 사용하고 있으며 이를 위해 개인 프로젝트에서 Babel을 활용하고 있습니다. 자바스크립트의 약점을 보완할 수 있는 TypeScript도 학습하고 있습니다.'
+            techDesc: '자바스크립트의 동작 원리에 관하여 주로 공부했습니다. Event loop, Hoisting 등 자바스크립트만의 특징은 물론 이벤트 버블링, 이벤트 위임, debounce, throttle 등 Event Handling관련 개념 또한 흥미를 갖고 학습했습니다. ES6문법을 주로 사용하고 있으며 이를 위해 개인 프로젝트에서 Babel을 활용하고 있습니다. 자바스크립트의 약점을 보완할 수 있는 TypeScript도 학습하고 있습니다.'
         },
         {
             techLogo: './images/logos/react.png',
