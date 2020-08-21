@@ -21,6 +21,7 @@ const HomeWrapper = styled.main`
 const HomeContentsBox = styled.section`
     width: 100%;
     height: max-content;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

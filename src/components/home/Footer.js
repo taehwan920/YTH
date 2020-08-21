@@ -18,7 +18,7 @@ const HomeFooter = styled.footer`
         font-size: 20px;
     }
 
-    @media (max-height: 599px) {
+    @media (max-height: 500px) {
         display: none;
     }
 `;
