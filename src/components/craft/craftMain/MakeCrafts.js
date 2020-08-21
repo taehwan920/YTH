@@ -22,6 +22,10 @@ class MakeCrafts extends React.Component {
                     color: '#61dafb'
                 },
                 {
+                    name: 'JavaScript',
+                    color: '#000'
+                },
+                {
                     name: 'CSS',
                     color: '#379ad6'
                 },
