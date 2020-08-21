@@ -21,7 +21,7 @@ const HomeWrapper = styled.main`
 const HomeContentsBox = styled.section`
     width: 100%;
     height: max-content;
-    padding-bottom: ${props => props.isMobile ? 60 : 0}px;
+    padding-bottom: ${props => props.isMobile ? 50 : 0}px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
