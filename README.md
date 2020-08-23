@@ -8,4 +8,4 @@ React JS, styled-component, Node.js, Mobx
 ### 포트폴리오 홈
 ![yth](https://user-images.githubusercontent.com/56597998/90977302-56e9ed80-e57f-11ea-83d7-63fd43479408.png)
 
-[YTH 링크](https://5f33fbde2a723578f21bb406--boring-ardinghelli-8b5e2f.netlify.app)
+[YTH 링크](https://ythworld.com)
