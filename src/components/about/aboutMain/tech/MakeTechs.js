@@ -7,18 +7,18 @@ export default class extends React.Component {
             techLogo: './images/logos/html.png',
             techName: 'HTML',
             nameColor: '#e44d26',
-            techDesc: `시맨틱 태그, 멀티미디어 태그, data-* Attribute 등 HTML5에서 새로 추가된 기능 및 DOM API를 주로 공부했습니다. 이 중 멀티미디어 태그에 관심이 많아 <video>태그, <canvas>태그를 각각 프로젝트에서 메인으로 활용한 경험이 있습니다. 특히 <canvas>는 interactive한 디자인과 기능을 구현할 수 있어 가능성이 무한한 태그라고 판단해 더 깊게 공부하고 있습니다.`
+            techDesc: `시맨틱 태그, 멀티미디어 태그 등 HTML5에서 새로 추가된 기능 및 웹 표준을 주로 공부했습니다. 이 중 멀티미디어 태그에 관심이 많아 <video>태그, <canvas>태그를 각각 프로젝트에서 메인으로 활용한 경험이 있습니다. 특히 <canvas>는 interactive한 디자인과 기능을 구현할 수 있어 가능성이 무한한 태그라고 판단해 더 깊게 공부하고 있습니다.`
         },
         {
             techLogo: './images/logos/css.png',
             techName: 'CSS',
             nameColor: '#379ad6',
-            techDesc: `display, position, Flexbox, Gridbox 등 CSS 레이아웃을 주로 학습했습니다. 이 중 Gridbox는 다룰 줄 아는 정도이며, animation, transition에도 관심이 많아 각 프로젝트에서 다양하게 활용했습니다. CSS로 웬만한 디자인 요구사항은 구현 가능합니다. SASS등의 전처리기는 사용해본 경험이 있는 정도입니다.`
+            techDesc: `display, position, Flexbox, Gridbox 등 CSS 레이아웃을 주로 학습했습니다. 이 중 Gridbox는 다룰 줄 아는 정도이며, 동적인 연출에도 관심이 많아 transition, animation 프로퍼티를 각 프로젝트에서 다양하게 활용했습니다. CSS로 웬만한 디자인 요구사항은 구현 가능합니다.`
         },
         {
             techLogo: './images/logos/js.png',
             techName: 'JavaScript',
-            techDesc: '자바스크립트의 동작 원리에 관하여 주로 공부했습니다. Event loop, Hoisting 등 자바스크립트만의 특징은 물론 이벤트 버블링, 이벤트 위임, debounce, throttle 등 Event Handling관련 개념 또한 흥미를 갖고 학습했습니다. ES6문법을 주로 사용하고 있으며 이를 위해 개인 프로젝트에서 Babel을 활용하고 있습니다. 자바스크립트의 약점을 보완할 수 있는 TypeScript도 학습하고 있습니다.'
+            techDesc: '자바스크립트의 동작 원리에 관하여 주로 공부했습니다. Event loop, Hoisting 등 자바스크립트만의 특징은 물론 이벤트 버블링, 이벤트 위임, debounce, throttle 등 Event Handling관련 개념 또한 흥미를 갖고 학습했습니다. ES6문법을 주로 사용하려 하고 있으며 웬만한 환경에서도 사용되도록 하기 위해 Babel을 활용하고 있습니다. 자바스크립트의 약점을 보완할 수 있는 TypeScript도 학습하고 있습니다.'
         },
         {
             techLogo: './images/logos/react.png',
