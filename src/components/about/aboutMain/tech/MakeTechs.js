@@ -30,13 +30,13 @@ export default class extends React.Component {
             techLogo: './images/logos/node.png',
             techName: 'NodeJS',
             nameColor: '#8bc74b',
-            techDesc: 'Express.js를 사용하여 데이터 제공 API 서버 제작 경험 및 MVC 구조를 제작한 경험이 있습니다. MVC 구조는 개념만 이해하고 한 번 만들어 본 수준입니다.'
+            techDesc: 'Express.js를 사용하여 데이터 제공 API 서버 제작 경험 및 MVC 구조를 제작한 경험이 있습니다. MVC 구조는 개념을 이해하고 연습을 겸해 간단히 구현해 본 수준입니다.'
         },
         {
             techLogo: './images/logos/electron.png',
             techName: 'ElectronJS',
             nameColor: '#d5feff',
-            techDesc: '데스크탑 앱을 만들고 싶어 접하게 됐습니다. 간단한 위젯형 데스크탑 앱을 만들어본 경험이 있습니다. 조금 다룰 줄 아는 수준입니다.'
+            techDesc: '데스크탑 앱에도 흥미가 있어 접했습니다. 간단한 위젯형 데스크탑 앱을 만들어본 경험이 있으며, 한번 다뤄 본 수준입니다.'
         },
         {
             techLogo: './images/logos/python.png',
@@ -54,13 +54,13 @@ export default class extends React.Component {
             techLogo: './images/logos/mobx.png',
             techName: 'mobX',
             nameColor: '#db5a14',
-            techDesc: 'React JS로 프로젝트를 제작하며 컴포넌트 간에 props와 state를 주고 받는 과정이 너무 번거롭고 복잡하다고 판단해 사용했습니다. 본 포트폴리오 사이트를 제작할 때 활용했으며, 기본적인 종합적 상태 관리 기능을 사용할 줄 아는 수준입니다.'
+            techDesc: 'React JS로 프로젝트를 제작하며 컴포넌트 간에 props와 state를 주고 받는 과정이 너무 번거롭고 복잡하다고 판단해 사용했습니다. 본 포트폴리오 사이트를 제작할 때 활용했으며, 기본적인 상태 관리 기능을 사용할 줄 아는 수준입니다.'
         },
         {
             techLogo: './images/logos/aws.png',
             techName: 'AWS',
             nameColor: '#ff9900',
-            techDesc: '개인 풀스택 프로젝트를 배포할 때 활용했습니다. EC2, RDS, Route53 서비스와 SSH을 사용하여 클라우드 컴퓨터 배포의 기초 원리 및 방법을 학습했습니다.',
+            techDesc: '개인 풀스택 프로젝트를 배포할 때 활용했습니다. EC2, RDS, Route53 서비스와 SSH을 사용하여 클라우드 컴퓨팅 기반 배포의 기초 원리 및 방법을 학습했습니다.',
         },
     ];
 
