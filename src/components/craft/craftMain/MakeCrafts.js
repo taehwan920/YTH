@@ -56,7 +56,7 @@ class MakeCrafts extends React.Component {
             imgUrl: './images/crafts/yt.png',
             craftTitle: 'YangTube',
             githubUrl: 'https://github.com/taehwan920/yangtube',
-            craftUrl: 'https://5f33fbde2a723578f21bb406--boring-ardinghelli-8b5e2f.netlify.app',
+            craftUrl: 'https://5f522b54fae12e0090d0cb41--boring-ardinghelli-8b5e2f.netlify.app/',
             techs: [
                 {
                     name: 'ReactJS',
