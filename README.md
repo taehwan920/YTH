@@ -39,14 +39,14 @@ CSS를 굉장히 편리하게 다룰 수 있게 해주는 강력한 라이브러
 
 ### 2. About 파트    
 * 스크롤 애니메이션    
-&nbsp;&nbsp;- About 파트에서는 세로 축을 테마로 하여 스크롤 이벤트를 구현했습니다.    
+&nbsp;&nbsp;- About 파트에서는 세로 축을 테마로 하여 스크롤 이벤트를 구현했습니다.<br/>    
 ![about](https://user-images.githubusercontent.com/56597998/92348608-8a478300-f10e-11ea-963e-84e161d84e40.gif)<br/><br/>    
 
 * 클립보드 복사    
-&nbsp;&nbsp;- 연락처는 클릭 시 클립보드에 복사되도록 하였습니다.    
+&nbsp;&nbsp;- 연락처는 클릭 시 클립보드에 복사되도록 하였습니다.<br/>    
 ![copy](https://user-images.githubusercontent.com/56597998/92348612-8c114680-f10e-11ea-9868-17837fb80185.gif)<br/><br/><br/><br/>
 
 ### 3. Craft 파트    
 * 스크롤 애니메이션    
-&nbsp;&nbsp;- Craft 파트에서는 가로 축을 테마로 하여 이벤트를 구현했습니다. 기본적으로는 상단 버튼으로 페이지를 넘길 수 있으며 추가적으로 PC 환경에서는 드래그, 모바일 환경에서는 스와이프로 페이지를 넘기는 기능을 구현했습니다.    
+&nbsp;&nbsp;- Craft 파트에서는 가로 축을 테마로 하여 이벤트를 구현했습니다. 기본적으로는 상단 버튼으로 페이지를 넘길 수 있으며 추가적으로 PC 환경에서는 드래그, 모바일 환경에서는 스와이프로 페이지를 넘기는 기능을 구현했습니다.<br/>    
 ![craft](https://user-images.githubusercontent.com/56597998/92348610-8b78b000-f10e-11ea-91bb-343faaad67de.gif)<br/><br/>    
