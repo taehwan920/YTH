@@ -1,7 +1,7 @@
 # YTH
 
 포트폴리오 웹앱입니다. 프로젝트 이름은 제 이름의 이니셜 약자입니다.
-[YTH 링크](https://ythworld.com)<br/><br/><br/>
+[YTH 링크](https://ythworld.com){: target="_blank"}<br/><br/><br/>
 
 ## 프로젝트 목표    
 1. 포트폴리오 웹사이트 제작으로 현재 기술 스택 및 지금까지 제작한 개인 프로젝트 어필    
